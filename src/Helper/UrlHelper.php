@@ -18,6 +18,7 @@
 
 namespace Afterpay\SDK\Helper;
 
+use Afterpay\SDK\Config;
 use Afterpay\SDK\Exception\InvalidArgumentException;
 
 final class UrlHelper
@@ -64,6 +65,9 @@ final class UrlHelper
 
         if (strtolower($apiEnvironment) === 'sandbox') {
             $prefix .= 'sandbox.';
+        } elseif (in_array(strtolower($apiEnvironment), ['stage'])) {
+            $prefix = '';
+            $tld = Config::get('merchantPortalFqdn');
         }
 
         return "https://{$prefix}{$tld}{$path}";

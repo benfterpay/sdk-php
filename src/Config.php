@@ -50,10 +50,19 @@ final class Config
         'apiEnvironment' => [
             'type' => 'enumi',
             'options' => [
+                'stage',
                 'sandbox',
                 'production'
             ],
             'default' => 'sandbox',
+            'src' => '.env.php'
+        ],
+        'apiEnvironmentUrl' => [
+            'type' => 'string',
+            'src' => '.env.php'
+        ],
+        'merchantPortalFqdn' => [
+            'type' => 'string',
             'src' => '.env.php'
         ],
         /**

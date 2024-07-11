@@ -218,8 +218,8 @@ final class MerchantAccount
          */
         if (! is_string($apiEnvironment)) {
             throw new InvalidArgumentException("Expected string; " . gettype($apiEnvironment) . ' given');
-        } elseif (! preg_match('/^sandbox|production$/i', $apiEnvironment)) {
-            throw new InvalidArgumentException("Expected 'sandbox' or 'production'; '{$apiEnvironment}' given");
+        } elseif (! preg_match('/^stage|sandbox|production$/i', $apiEnvironment)) {
+            throw new InvalidArgumentException("Expected 'stage', 'sandbox' or 'production'; '{$apiEnvironment}' given");
         }
 
         $this->apiEnvironment = $apiEnvironment;
