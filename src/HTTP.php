@@ -49,6 +49,16 @@ class HTTP
     private static $apiEnvironment;
 
     /**
+     * @var string $apiEnvironmentUrl
+     */
+    private static $apiEnvironmentUrl = null;
+
+    /**
+     * @var string $merchantPortalFqdn
+     */
+    private static $merchantPortalFqdn = null;
+
+    /**
      * @var array $userAgentPlatformDetails
      */
     private static $userAgentPlatformDetails = [];
@@ -151,6 +161,48 @@ class HTTP
         }
 
         self::$apiEnvironment = $apiEnvironment;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getApiEnvironmenUrl()
+    {
+        return self::$apiEnvironmentUrl;
+    }
+
+    /**
+     * @param string $apiEnvironmentUrl
+     * @throws \Afterpay\SDK\Exception\InvalidArgumentException
+     */
+    public static function setApiEnvironmentUrl($apiEnvironmentUrl)
+    {
+        if (! is_string($apiEnvironmentUrl)) {
+            throw new InvalidArgumentException("Expected string; " . gettype($apiEnvironmentUrl) . ' given');
+        }
+
+        self::$apiEnvironmentUrl = $apiEnvironmentUrl;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getMerchantPortalFqdn()
+    {
+        return self::$merchantPortalFqdn;
+    }
+
+    /**
+     * @param string $merchantPortalFqdn
+     * @throws \Afterpay\SDK\Exception\InvalidArgumentException
+     */
+    public static function setMerchantPortalFqdn($merchantPortalFqdn)
+    {
+        if (! is_string($merchantPortalFqdn)) {
+            throw new InvalidArgumentException("Expected string; " . gettype($merchantPortalFqdn) . ' given');
+        }
+
+        self::$merchantPortalFqdn = $merchantPortalFqdn;
     }
 
     /**
