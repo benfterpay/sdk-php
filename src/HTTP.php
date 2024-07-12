@@ -166,7 +166,7 @@ class HTTP
     /**
      * @return string
      */
-    public static function getApiEnvironmenUrl()
+    public static function getApiEnvironmentUrl()
     {
         return self::$apiEnvironmentUrl;
     }
