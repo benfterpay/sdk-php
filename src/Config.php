@@ -57,11 +57,11 @@ final class Config
             'default' => 'sandbox',
             'src' => '.env.php'
         ],
-        'apiEnvironmentUrl' => [
+        'customApiEnvironmentUrl' => [
             'type' => 'string',
             'src' => '.env.php'
         ],
-        'merchantPortalFqdn' => [
+        'customMerchantPortalFqdn' => [
             'type' => 'string',
             'src' => '.env.php'
         ],

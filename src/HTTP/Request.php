@@ -296,8 +296,8 @@ class Request extends HTTP
         if (strtolower($apiEnvironment) == 'production') {
             $this->apiEnvironmentUrl = "https://global-api.afterpay.com";
         } elseif(in_array(strtolower($apiEnvironment), ['stage'])) {
-            $str = self::getApiEnvironmentUrl();
-            $this->apiEnvironmentUrl = (!is_null($str) ? $str : Config::get('apiEnvironmentUrl'));
+            $str = HTTP::getCustomApiEnvironmentUrl();
+            $this->apiEnvironmentUrl = (!is_null($str) ? $str : Config::get('customApiEnvironmentUrl'));
         } else {
             $this->apiEnvironmentUrl = "https://global-api-sandbox.afterpay.com";
         }

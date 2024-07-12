@@ -68,8 +68,8 @@ final class UrlHelper
             $prefix .= 'sandbox.';
         } elseif (in_array(strtolower($apiEnvironment), ['stage'])) {
             $prefix = '';
-            $str = HTTP::getMerchantPortalFqdn();
-            $tld = (!is_null($str) ? $str : Config::get('merchantPortalFqdn'));
+            $str = HTTP::getCustomMerchantPortalFqdn();
+            $tld = (!is_null($str) ? $str : Config::get('customMerchantPortalFqdn'));
         }
 
         return "https://{$prefix}{$tld}{$path}";

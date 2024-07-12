@@ -49,14 +49,14 @@ class HTTP
     private static $apiEnvironment;
 
     /**
-     * @var string $apiEnvironmentUrl
+     * @var string $customApiEnvironmentUrl
      */
-    private static $apiEnvironmentUrl = null;
+    private static $customApiEnvironmentUrl = null;
 
     /**
-     * @var string $merchantPortalFqdn
+     * @var string $customMerchantPortalFqdn
      */
-    private static $merchantPortalFqdn = null;
+    private static $customMerchantPortalFqdn = null;
 
     /**
      * @var array $userAgentPlatformDetails
@@ -166,43 +166,43 @@ class HTTP
     /**
      * @return string
      */
-    public static function getApiEnvironmentUrl()
+    public static function getCustomApiEnvironmentUrl()
     {
-        return self::$apiEnvironmentUrl;
+        return self::$customApiEnvironmentUrl;
     }
 
     /**
-     * @param string $apiEnvironmentUrl
+     * @param string $customApiEnvironmentUrl
      * @throws \Afterpay\SDK\Exception\InvalidArgumentException
      */
-    public static function setApiEnvironmentUrl($apiEnvironmentUrl)
+    public static function setCustomApiEnvironmentUrl($customApiEnvironmentUrl)
     {
-        if (! is_string($apiEnvironmentUrl)) {
-            throw new InvalidArgumentException("Expected string; " . gettype($apiEnvironmentUrl) . ' given');
+        if (! is_string($customApiEnvironmentUrl)) {
+            throw new InvalidArgumentException("Expected string; " . gettype($customApiEnvironmentUrl) . ' given');
         }
 
-        self::$apiEnvironmentUrl = $apiEnvironmentUrl;
+        self::$customApiEnvironmentUrl = $customApiEnvironmentUrl;
     }
 
     /**
      * @return string
      */
-    public static function getMerchantPortalFqdn()
+    public static function getCustomMerchantPortalFqdn()
     {
-        return self::$merchantPortalFqdn;
+        return self::$customMerchantPortalFqdn;
     }
 
     /**
-     * @param string $merchantPortalFqdn
+     * @param string $customMerchantPortalFqdn
      * @throws \Afterpay\SDK\Exception\InvalidArgumentException
      */
-    public static function setMerchantPortalFqdn($merchantPortalFqdn)
+    public static function setCustomMerchantPortalFqdn($customMerchantPortalFqdn)
     {
-        if (! is_string($merchantPortalFqdn)) {
-            throw new InvalidArgumentException("Expected string; " . gettype($merchantPortalFqdn) . ' given');
+        if (! is_string($customMerchantPortalFqdn)) {
+            throw new InvalidArgumentException("Expected string; " . gettype($customMerchantPortalFqdn) . ' given');
         }
 
-        self::$merchantPortalFqdn = $merchantPortalFqdn;
+        self::$customMerchantPortalFqdn = $customMerchantPortalFqdn;
     }
 
     /**
